@@ -47,28 +47,42 @@
   let currentDate = new Date();
 </script>
 
-<div class="content">
-  {#if hasStartValue && startDateMillisValue != 0}
-    <div class="timer-text">你堅持咗</div>
-    <div class="timer">
-      <div id="day">{day} 日</div>
+<div class="main">
+  <div class="outer" />
 
-      <div id="hour">{hour} 小時</div>
+  <div class="content">
+    {#if hasStartValue && startDateMillisValue != 0}
+      <div class="timer-text">你堅持咗</div>
+      <div class="timer">
+        <div id="day">{day} 日</div>
 
-      <div id="minute">{minute} 分鐘</div>
+        <div id="hour">{hour} 小時</div>
 
-      <div id="second">{second} 秒</div>
-    </div>
+        <div id="minute">{minute} 分鐘</div>
 
-    <button on:click={resetTimer} class="button">屌</button>
-  {:else}
-    <button on:click={startTimer} class="button">開始戒色</button>
-  {/if}
+        <div id="second">{second} 秒</div>
+      </div>
+
+      <button on:click={resetTimer} class="button">屌</button>
+    {:else}
+      <button on:click={startTimer} class="button">開始戒色</button>
+    {/if}
+  </div>
 </div>
 
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 
+  .main,
+  .outer {
+    height: 10vh;
+  }
+
+  .main {
+    display: table;
+    margin: 0 auto;
+  }
+  
   .content {
     border-color: #ffe54c;
     border-style: dotted;
