@@ -17,13 +17,13 @@ jobs:
 
       - name: Build site
         run: |
-          npm install --production
+          npm install
           npm run build
 
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.2.3
         with:
-          publish-dir: /.svelte-kit
+          publish-dir: ./public
           production-branch: main
           deploy-message: '${{ github.event.head_commit.message }}'
         env:
