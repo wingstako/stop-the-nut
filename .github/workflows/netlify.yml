@@ -1,0 +1,32 @@
+name: Netlify Build
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.4.1
+        with:
+          version: 16.x
+
+      - name: Build site
+        run: |
+          npm install --production
+          npm build
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v1.2.3
+        with:
+          publish-dir: /.svelte-kit
+          production-branch: main
+          deploy-message: '${{ github.event.head_commit.message }}'
+        env:
+          NETLIFY_SITE_ID: '${{ secrets.NETLIFY_SITE_ID }}'
+          NETLIFY_AUTH_TOKEN: '${{ secrets.NETLIFY_TOKEN }}'
+          
