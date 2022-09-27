@@ -1,6 +1,10 @@
 {
 	"name": "stop-nut-counter",
 	"version": "0.0.1",
+	"license": "Apache-2.0",
+	"repository": "https://github.com/wingstako/stop-the-nut",
+	"bugs": "https://github.com/wingstako/stop-the-nut/issues",
+	"author": "wingstako",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
