@@ -3,6 +3,8 @@
   import { hasStart, startDateMillis } from "$lib/store";
   import dayjs from "dayjs";
 
+  import { t, l, locales } from "$lib/translations";
+
   let hasStartValue = false;
   hasStart.subscribe((value) => {
     hasStartValue = value;
@@ -49,27 +51,42 @@
 
 <div class="timer-container">
   {#if hasStartValue && startDateMillisValue != 0}
-    <div class="timer-text">你堅持咗</div>
-    <div class="timer">
-      <div id="day">{day} 日</div>
+    <div class="timer-text">{$t("timer.persist")}</div>
+    <table class="timer">
+      <tr>
+        <td>{day}</td>
+        <td>{$t("timer.day")}</td>
+      </tr>
 
-      <div id="hour">{hour} 小時</div>
+      <tr>
+        <td id="hour">{hour} </td>
+        <td>{$t("timer.hour")}</td>
+      </tr>
 
-      <div id="minute">{minute} 分鐘</div>
+      <tr>
+        <td id="minute">{minute} </td>
+        <td>{$t("timer.minute")}</td>
+      </tr>
 
-      <div id="second">{second} 秒</div>
-    </div>
+      <tr>
+        <td id="second">{second} </td>
+        <td>{$t("timer.second")}</td>
+      </tr>
+    </table>
 
-    <button on:click={resetTimer} class="button">屌</button>
+    <button on:click={resetTimer} class="button">{$t("timer.fuck")}</button>
   {:else}
-    <button on:click={startTimer} class="button">開始戒色</button>
+    <button on:click={startTimer} class="button">{$t("timer.start")}</button>
   {/if}
 </div>
 
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 
-
+  table {
+    table-layout: auto;
+  }
+  
   .timer-container {
     display: flex;
     flex-direction: column;
