@@ -1,19 +1,26 @@
 <script lang="ts">
   import Tabs from "$lib/components/tabs.svelte";
   import About from "$lib/tabs/about.svelte";
+  import Settings from "$lib/tabs/settings.svelte";
   import Timer from "$lib/tabs/timer.svelte";
 
+  import { t, l, locales } from '$lib/translations'; 
 
   let items: NUT.Tab[] = [
     {
-      label: "Hello world",
+      label: $t("tab.timer"),
       value: 1,
       component: Timer,
     },
     {
-      label: "About",
+      label: $t("tab.about"),
       value: 2,
       component: About,
+    },
+    {
+      label: $t("tab.settings"),
+      value: 3,
+      component: Settings,
     },
   ];
 

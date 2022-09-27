@@ -9,6 +9,7 @@ specifiers:
   svelte: ^3.44.0
   svelte-check: ^2.7.1
   svelte-preprocess: ^4.10.6
+  sveltekit-i18n: ^2.2.2
   tslib: ^2.3.1
   typescript: ^4.7.4
   uuid: ^9.0.0
@@ -17,11 +18,12 @@ specifiers:
 dependencies:
   '@supabase/supabase-js': 1.35.6
   dayjs: 1.11.5
+  sveltekit-i18n: 2.2.2_svelte@3.50.1
   uuid: 9.0.0
 
 devDependencies:
-  '@sveltejs/adapter-auto': 1.0.0-next.76
-  '@sveltejs/kit': 1.0.0-next.491_svelte@3.50.1+vite@3.1.3
+  '@sveltejs/adapter-auto': 1.0.0-next.80
+  '@sveltejs/kit': 1.0.0-next.504_svelte@3.50.1+vite@3.1.3
   '@types/uuid': 8.3.4
   svelte: 3.50.1
   svelte-check: 2.9.0_svelte@3.50.1
@@ -181,19 +183,19 @@ packages:
       - supports-color
     dev: false
 
-  /@sveltejs/adapter-auto/1.0.0-next.76:
-    resolution: {integrity: sha512-JPNBcQllucX0pqchYY8iD7adSKO+11C4fVT78zH6VupULirdYhns3R0npTXU63AoWO4FknpSY35GUhtyB4yEnA==}
+  /@sveltejs/adapter-auto/1.0.0-next.80:
+    resolution: {integrity: sha512-352WoZr9fQgxJqgNENvxRr2gsA+wTF6V9AVaQaaatDYd3RVEBaXTYOOalFaRLSa25mRUJaLYP2aaliqczMl23g==}
     dependencies:
-      '@sveltejs/adapter-cloudflare': 1.0.0-next.35
+      '@sveltejs/adapter-cloudflare': 1.0.0-next.38
       '@sveltejs/adapter-netlify': 1.0.0-next.78
-      '@sveltejs/adapter-vercel': 1.0.0-next.76
+      '@sveltejs/adapter-vercel': 1.0.0-next.77
     transitivePeerDependencies:
       - encoding
       - supports-color
     dev: true
 
-  /@sveltejs/adapter-cloudflare/1.0.0-next.35:
-    resolution: {integrity: sha512-/o6kl2iLxiRGmhaf70fuVeMVP9S8OprmtOYcMj2QIWmpV5bdIXWJmZXLotrJUfipTroKf4sI8ULdjwf9HkQwoQ==}
+  /@sveltejs/adapter-cloudflare/1.0.0-next.38:
+    resolution: {integrity: sha512-N6jdTomRZkdKlcNoguwYD7lpdXSt0beIyUJsp0MS/YLm/4gI83y698zFYInFKJ9t5e6DAnuEBSAXcg568z2oFA==}
     dependencies:
       '@cloudflare/workers-types': 3.16.0
       esbuild: 0.15.8
@@ -208,8 +210,8 @@ packages:
       set-cookie-parser: 2.5.1
     dev: true
 
-  /@sveltejs/adapter-vercel/1.0.0-next.76:
-    resolution: {integrity: sha512-Od9DBfeMwWC/sZNeCJw4TYVE3LMR8lGJivSdkXWgpvksgG+QizLyzTfvBacapId3wcu+7X4PPTLoH00o5iQGEQ==}
+  /@sveltejs/adapter-vercel/1.0.0-next.77:
+    resolution: {integrity: sha512-r4MqtP+lzx83HfcvI8PU0Yxzmxt6WQq9nzZETLboJouJzhSBUFIN5RmNZfEn6nNIlUwZbGQUEK/FxsRnnxI/Ig==}
     dependencies:
       '@vercel/nft': 0.22.1
       esbuild: 0.15.8
@@ -218,8 +220,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.491_svelte@3.50.1+vite@3.1.3:
-    resolution: {integrity: sha512-KO/t0OPxBWF5ZXp8RtIOVkQczo8NPHD6xqRVpSe/gZy9MmCmW/vhK2ifsENjayutyUNi7GzvrBgPyD91YHtm5g==}
+  /@sveltejs/kit/1.0.0-next.504_svelte@3.50.1+vite@3.1.3:
+    resolution: {integrity: sha512-KrhlSHT3aCVnhRgUoN6aGIjIw3nWEdNwfoZcE1x65F5D7Ju/K9D8dQwyal9v0aBAZyN9nFuXxsYGaMLE9sppfw==}
     engines: {node: '>=16.14'}
     hasBin: true
     requiresBuild: true
@@ -269,6 +271,20 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@sveltekit-i18n/base/1.2.1_svelte@3.50.1:
+    resolution: {integrity: sha512-F8gqG2+KAOeT0o2wYlUrW3TRCX7zaD7rBy/1CEVNw0irfw9TgFf/ODmhubkHHT3+6Zk+SMz8RNgeuffBfAMbJw==}
+    peerDependencies:
+      svelte: ^3.x
+    dependencies:
+      svelte: 3.50.1
+    optionalDependencies:
+      '@sveltekit-i18n/parser-default': 1.0.3
+    dev: false
+
+  /@sveltekit-i18n/parser-default/1.0.3:
+    resolution: {integrity: sha512-HheveklTjp3hxpYQhoHfyA6B4bQaUeSV5MQf2usIv/58UF2jY/YqhCAWj9bDBjufbuZc5pSz4BXvdX3WVT+viA==}
+    dev: false
 
   /@types/cookie/0.5.1:
     resolution: {integrity: sha512-COUnqfB2+ckwXXSFInsFdOAWQzCCx+a5hq2ruyj+Vjund94RJQd4LG2u9hnvJrTgunKAaax7ancBYlDrNYxA0g==}
@@ -1474,7 +1490,16 @@ packages:
   /svelte/3.50.1:
     resolution: {integrity: sha512-bS4odcsdj5D5jEg6riZuMg5NKelzPtmsCbD9RG+8umU03TeNkdWnP6pqbCm0s8UQNBkqk29w/Bdubn3C+HWSwA==}
     engines: {node: '>= 8'}
-    dev: true
+
+  /sveltekit-i18n/2.2.2_svelte@3.50.1:
+    resolution: {integrity: sha512-6eygICleGCSL7elY7A3trF8XUhV+mlW56ZSoD0UUKXlw+Y6u0MTTHDq48u1LyY73SfnlbPHXgTarhTjZ0BvUKA==}
+    peerDependencies:
+      svelte: ^3.x
+    dependencies:
+      '@sveltekit-i18n/base': 1.2.1_svelte@3.50.1
+      '@sveltekit-i18n/parser-default': 1.0.3
+      svelte: 3.50.1
+    dev: false
 
   /tar/6.1.11:
     resolution: {integrity: sha512-an/KZQzQUkZCkuoAA64hM92X0Urb6VpRhAFllDzz44U2mcD5scmT3zBc4VgVpkugF580+DQn8eAFSyoQt0tznA==}

@@ -24,6 +24,7 @@
 	"dependencies": {
 		"@supabase/supabase-js": "^1.35.6",
 		"dayjs": "^1.11.5",
+		"sveltekit-i18n": "^2.2.2",
 		"uuid": "^9.0.0"
 	}
 }
