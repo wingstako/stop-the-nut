@@ -4,7 +4,8 @@ import translations from './translations';
 const config: Config = {
     log: { level: 'error' },
     initLocale: 'zh_hk',
+    fallbackLocale: 'en',
     translations,
 };
 
-export const { t, l, locales, locale } = new i18n(config);
+export const { t, l, locales, locale, loadTranslations } = new i18n(config);
