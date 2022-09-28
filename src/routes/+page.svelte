@@ -18,11 +18,11 @@
       value: 2,
       component: About,
     },
-    {
-      label: $t("tab.settings"),
-      value: 3,
-      component: Settings,
-    },
+    // {
+    //   label: $t("tab.settings"),
+    //   value: 3,
+    //   component: Settings,
+    // },
   ];
 
   // let activeTab = 0,
