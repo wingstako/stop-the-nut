@@ -1,10 +1,11 @@
 <script lang="ts">
+  import Footer from "$lib/components/footer.svelte";
   import Tabs from "$lib/components/tabs.svelte";
   import About from "$lib/tabs/about.svelte";
   import Settings from "$lib/tabs/settings.svelte";
   import Timer from "$lib/tabs/timer.svelte";
 
-  import { t, l, locales } from '$lib/translations'; 
+  import { t, l, locales } from "$lib/translations";
 
   let items: NUT.Tab[] = [
     {
@@ -57,6 +58,8 @@
   </div>
 </div>
 
+<div class="footer"><Footer /></div>
+
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 
@@ -73,5 +76,15 @@
   .main {
     display: table;
     margin: 0 auto;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0px;
+    align-items: center;
+    text-align: center;
+    width: 100vw;
+    margin: 0;
+    display: inline-block;
   }
 </style>

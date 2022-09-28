@@ -80,13 +80,13 @@
   {/if}
 </div>
 
-<style>
+<style scope>
   @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 
   table {
     table-layout: auto;
   }
-  
+
   .timer-container {
     display: flex;
     flex-direction: column;
