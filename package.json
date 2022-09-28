@@ -27,8 +27,8 @@
 	"type": "module",
 	"dependencies": {
 		"@supabase/supabase-js": "^1.35.6",
+		"crypto-js": "^4.1.1",
 		"dayjs": "^1.11.5",
-		"sveltekit-i18n": "^2.2.2",
-		"uuid": "^9.0.0"
+		"sveltekit-i18n": "^2.2.2"
 	}
 }

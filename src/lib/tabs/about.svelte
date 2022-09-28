@@ -1,7 +1,3 @@
-<script lang="ts">
-</script>
-
-<!-- Example #4 - external ♥-icon -->
 <link
   rel="stylesheet"
   type="text/css"
